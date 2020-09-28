@@ -5,8 +5,8 @@ import java.io.InputStreamReader;
 
 import AnalizadorLexico.LectorBuffer;
 import AccionesSemanticas.AccionSemantica;
-import AnalizadorLexico.PalabrasReservadas;
-import AnalizadorLexico.TablaTokens;
+//import AnalizadorLexico.PalabrasReservadas;
+//import AnalizadorLexico.TablaTokens;
 
 public class Main {
 
