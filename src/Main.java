@@ -22,18 +22,6 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		// -----Para leer linea por linea de un archivo
 		 String cadena = "";
-		 /*------Prueba de si devuelve una palabra reservada--------------
-		System.out.println(PalabrasReservadas.getPalabraReservada(3));
-		*/
-
-
-		/*-----Prueba de tabla de tokens-----
-		TablaTokens table = new TablaTokens();
-		table.addTokens(";(", 3);
-		table.addTokens(")", 4);
-		table.imprimirTabla();
-		*/
-
 		LectorBuffer leerArchivo;
 		//String pathAle = "c:\\Users\\ale_5\\git\\Trabajo-Compiladores\\prueba.txt";
 		String pathGian = "C:\\Users\\Gian\\Desktop\\Compiladores\\prueba.txt";
@@ -44,7 +32,7 @@ public class Main {
 	    }
 		//Definicion de matriz de transicion de estados y matriz de Acciones Semanticas
 		char matrizTrancision[][] = new char[12][23];
-		AccionSemantica[][] matrizAsemantica = new AccionSemantica[12][23];
+		//AccionSemantica[][] matrizAsemantica = new AccionSemantica[12][23];
 		inicMatrizChar(matrizTrancision);
 
    }
