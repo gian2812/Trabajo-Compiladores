@@ -6,8 +6,18 @@ import java.io.InputStreamReader;
 import AnalizadorLexico.LectorBuffer;
 import AnalizadorLexico.PalabrasReservadas;
 import AnalizadorLexico.TablaTokens;
+import AccionesSemanticas.AccionSemantica;
 
 public class Main {
+
+	//Funcion para inicializar la matriz de chars
+		public static void inicMatrizChar(char mat[][]) {
+			for(int f=0;f<mat.length;f++)
+	            for(int c=0;c<mat[f].length;c++) {
+					mat[f][c]='F';
+					System.out.println(mat[f][c]);
+				}
+		}
 
 	public static void main(String[] args) throws IOException {
 		/* -----Para leer linea por linea de un archivo-------------
@@ -33,5 +43,6 @@ public class Main {
 		table.addTokens(")", 4);
 		table.imprimirTabla();
 		*/
-	    }
+   }
 }
+
