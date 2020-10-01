@@ -13,15 +13,7 @@ public class LectorBuffer extends BufferedReader {
 	private boolean ultimoCaracterFueLeido;
 	
 	
-	/* Definimos dos constructores, uno con tamaño y otro sin el tamaño */
-	public LectorBuffer(Reader entrada, int tamaño) {
-		super(entrada,tamaño);
-		this.lineaActual = 1;
-		this.ultimoCaracterFueLeido = false;
-		this.ultimoCaracterLeido = "";
-		
-	}
-	
+	/* Definimos el constructor */
 	public LectorBuffer(Reader entrada) {
 		super(entrada);
 		this.lineaActual = 1;

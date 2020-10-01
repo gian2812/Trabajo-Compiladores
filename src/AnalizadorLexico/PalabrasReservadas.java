@@ -2,7 +2,7 @@ package AnalizadorLexico;
 
 public class PalabrasReservadas {
 	
-	/* Tenemos que ponerles un ID */
+	/* Tenemos que ponerles un ID que nos da el yacc*/
 	private static final int IF = 0;
 	private static final int THEN = 1;
 	private static final int ELSE = 2;
