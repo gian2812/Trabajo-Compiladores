@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import AnalizadorLexico.LectorBuffer;
-import AnalizadorLexico.PalabrasReservadas;
-import AnalizadorLexico.TablaTokens;
+//import AnalizadorLexico.PalabrasReservadas;
+//import AnalizadorLexico.TablaTokens;
 import AccionesSemanticas.AccionSemantica;
 
 public class Main {
