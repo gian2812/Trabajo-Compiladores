@@ -27,6 +27,21 @@ public class AnalizadorLex {
 			
 			
 			}; 
+	
+	public AnalizadorLex() {
+		
+	}
+	public void mostrarMatriz() {
+		for(int i=0; i<this.matrizTransicionEstados.length; i++) {
+			System.out.print("|");
+			for(int j=0; j<this.matrizTransicionEstados[i].length;j++) {
+				System.out.print(this.matrizTransicionEstados[i][j]);
+				if (j!=this.matrizTransicionEstados[i].length-1) 
+					System.out.print("\t");
+			}
+			System.out.println("|");
+		}
+	}
 
 
 }
