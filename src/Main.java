@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import AnalizadorLexico.AnalizadorLex;
+import AnalizadorLexico.AnalizadorLexico;
 import AnalizadorLexico.LectorBuffer;
 import AnalizadorLexico.PalabrasReservadas;
 import AnalizadorLexico.TablaTokens;
@@ -43,7 +43,7 @@ public class Main {
 		*/
 		
 		/*-----Prueba Matriz de transicion-----*/
-		AnalizadorLex m = new AnalizadorLex();
+		AnalizadorLexico m = new AnalizadorLexico();
 		m.mostrarMatriz();
 		
 	}

@@ -1,0 +1,26 @@
+package AccionesSemanticas;
+
+
+public class AS09 extends AccionSemantica{
+
+	/* Accion semantica numero 9
+	 * Meter en la tabla de simbolo si no existe y agregar el caracter al string
+	 */
+	
+	public AS09() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "AS09";
+	}
+
+}

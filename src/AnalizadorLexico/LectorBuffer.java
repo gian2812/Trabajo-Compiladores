@@ -9,7 +9,7 @@ import java.io.Reader;
 public class LectorBuffer extends BufferedReader {
 	
 	private int lineaActual;
-	private String ultimoCaracterLeido;
+	private int ultimoCaracterLeido;
 	private boolean ultimoCaracterFueLeido;
 	
 	
@@ -18,7 +18,7 @@ public class LectorBuffer extends BufferedReader {
 		super(entrada);
 		this.lineaActual = 1;
 		this.ultimoCaracterFueLeido = false;
-		this.ultimoCaracterLeido = "";
+		this.ultimoCaracterLeido = 0;
 	}
 	
 	/* Se obtiene la linea actual */
@@ -27,13 +27,13 @@ public class LectorBuffer extends BufferedReader {
 	}
 	
 	/* Leo el proximo caracter */
-	public String LeerProximoCaracter() throws IOException {
+	public int LeerProximoCaracter() throws IOException {
 		if (this.ultimoCaracterFueLeido)
 			this.ultimoCaracterFueLeido = false;
 		else {
-			if((String)this.ultimoCaracterLeido=="\n")
+			if((char)this.ultimoCaracterLeido=='\n')
 				this.lineaActual++;
-			this.ultimoCaracterLeido = this.readLine();
+			this.ultimoCaracterLeido = this.read();
 		}
 		return this.ultimoCaracterLeido;
 	}

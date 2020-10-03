@@ -1,5 +1,10 @@
 package AccionesSemanticas;
 
-abstract public class AccionSemantica {
+
+public abstract class AccionSemantica {
+	
+	public AccionSemantica() {
+	}
+	
 	public abstract void execute();
 }
