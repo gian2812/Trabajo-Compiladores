@@ -15,7 +15,7 @@ public class AS03 extends AccionSemantica {
 	
 	public void execute(AnalizadorLexico a_lexico,char c) {
 		//do something
-		a_lexico.cadena+=c;
+		a_lexico.lexema+=c;
 	}
 
 	@Override

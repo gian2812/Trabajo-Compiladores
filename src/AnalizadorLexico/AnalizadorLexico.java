@@ -12,7 +12,8 @@ public class AnalizadorLexico {
 	
 	public int pos = 0;
 	public int nroLinea = 1; //se comienza a leer el archivo desde la primer linea
-	public String cadena;
+	public String lexema;
+	
 	public PalabrasReservadas PR= new PalabrasReservadas();
 	private LectorBuffer buffer;
 	private MatrizAcciones matrizAcciones;
@@ -72,6 +73,89 @@ public class AnalizadorLexico {
 	}
 	
 	/*------Fin de las funciones de la matriz de transicion de estados------*/
+	private int paridad(char c) {
+		if (c == 'f')
+			return 2;
+		if (c == '/')
+			return 3;
+		if (c == 'i')
+			return 21;
+		if (((int)c > 64 && (int)c < 91) || ( (int)c > 96 && (int)c < 123 )) //comparo por numero ASCII
+			return 0;
+		if ((int)c > 47 && (int)c <58 )
+			return 1;
+		if (c == '*')
+			return 4;
+		if (c == '+')
+			return 5;
+		if (c == '-')
+			return 6;
+		if (c == '=')
+			return 7;
+		if (c == '<')
+			return 8;
+		if (c == '>')
+			return 9;
+		if (c == '{')
+			return 10;
+		if (c == '}')
+			return 11;
+		if (c == '(')
+			return 12;
+		if (c == ')')
+			return 13;
+		if (c == ',')
+			return 14;
+		if (c == ';')
+			return 15;
+		if (c == '"')
+			return 16;
+		if (c == '.')
+			return 17;
+		if (c == '%')
+			return 18;
+		if (c == '_')
+			return 19;
+		if ((int)c == 32 || (int)c == 9)
+			return 20;
+		if (c == '!')
+			return 22;
+		if ((int)c == 10)
+			return 24;
+		return 23;
+			
+		
+	}
+	
+	public int getNroLinea() {
+		return nroLinea;
+	}
+
+
+	public void setNroLinea(int nroLinea) {
+		this.nroLinea = nroLinea;
+	}
+
+
+	public String getLexema() {
+		return lexema;
+	}
+
+
+	public void setLexema(String lexema) {
+		this.lexema = lexema;
+	}
+
+
+	public PalabrasReservadas getPR() {
+		return PR;
+	}
+
+
+	public void setPR(PalabrasReservadas pR) {
+		PR = pR;
+	}
+
 
 
 }

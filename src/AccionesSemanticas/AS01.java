@@ -18,9 +18,9 @@ public class AS01 extends AccionSemantica {
 	
 	public void execute(AnalizadorLexico a_lexico,char c) {
 		
-		if (a_lexico.cadena.length() < 20) {
+		if (a_lexico.lexema.length() < 20) {
 			//tirar warning
-			a_lexico.cadena+=c;
+			a_lexico.lexema+=c;
 			
 		}
 		else {
