@@ -5,35 +5,35 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class TablaTokens {
+public class TablaSimbolos {
 
 	/* Tengo duda de si tenemos que crear una clase que represente un tipo, por que iria, _INTEGER,_FLOAT */
-	private HashMap<String,Integer> simbolos; /* es la tabla de tokens */
+	private HashMap<String,Integer> simbolos; /* es la tabla de simbolos */
 	
 	/* Constructor, se inicializa en vacio */
-	public TablaTokens(){
+	public TablaSimbolos(){
 		this.simbolos = new HashMap<>();
 	}
 	
-	/* Para agregar un token */
+	/* Para agregar un simbolo */
 	public void addTokens(String token,Integer id) {
 		if (!this.simbolos.containsKey(token))
 			this.simbolos.put(token, id);
 	}
 	
-	/* Obtener un token */
+	/* Obtener un simbolo */
 	public Integer getTokens(Integer id) {
 		return this.simbolos.get(id);
 	}
 
-	/* Elimina un token */
+	/* Elimina un simbolo */
 	public void removeToken(Integer id) {
 		this.simbolos.remove(id);
 	}
 	
 	/* Imprime por pantalla la tabla */
 	public void imprimirTabla() {
-		System.out.println("Tabla de Tokens");
+		System.out.println("Tabla de Simbolos: ");
 		Iterator it = simbolos.entrySet().iterator();
 		while (it.hasNext()) {
 		    Map.Entry e = (Entry) it.next();

@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import AnalizadorLexico.AnalizadorLexico;
 import AnalizadorLexico.LectorBuffer;
 import AnalizadorLexico.PalabrasReservadas;
-import AnalizadorLexico.TablaTokens;
+import AnalizadorLexico.TablaSimbolos;
 
 /*-----Importaciones del paqute de Acciones semanticssas----*/
 import AccionesSemanticas.AccionSemantica;
@@ -28,9 +28,9 @@ public class Main {
 		/*
 		 * -----Para leer linea por linea de un archivo------------- String cadena = "";
 		 * 
-		 * LectorBuffer leerArchivo; String path =
-		 * "c:\\Users\\ale_5\\git\\Trabajo-Compiladores\\prueba.txt"; leerArchivo = new
-		 * LectorBuffer(new InputStreamReader(new FileInputStream(path)));
+		 * LectorBuffer leerArchivo; 
+		 * String path = "c:\\Users\\ale_5\\git\\Trabajo-Compiladores\\prueba.txt"; 
+		 * leerArchivo = new LectorBuffer(new InputStreamReader(new FileInputStream(path)));
 		 * while((cadena=leerArchivo.LeerProximoCaracter()) != null) {
 		 * System.out.println(cadena); }
 		 */

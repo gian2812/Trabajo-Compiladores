@@ -1,10 +1,21 @@
 package AnalizadorLexico;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+import AccionesSemanticas.MatrizAcciones;
+
 public class AnalizadorLexico {
+	
 	public int pos = 0;
-	public int nroLinea = 1; //se comienza a leer el archivo desde la linea 1 
+	public int nroLinea = 1; //se comienza a leer el archivo desde la primer linea
 	public String cadena;
 	public PalabrasReservadas PR= new PalabrasReservadas();
+	private LectorBuffer buffer;
+	private MatrizAcciones matrizAcciones;
 	private static final int FINAL = -1 ;
 	private static final int ERROR = -2 ;
 	private static final int[][] matrizTransicionEstados = {
@@ -32,7 +43,10 @@ public class AnalizadorLexico {
 			
 			}; 
 	
-	public AnalizadorLexico() {
+	public AnalizadorLexico(String path) throws IOException {
+
+		buffer = new LectorBuffer(new InputStreamReader(new FileInputStream(path)));
+		matrizAcciones = new MatrizAcciones();
 		
 	}
 	
