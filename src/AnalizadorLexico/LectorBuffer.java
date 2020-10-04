@@ -28,6 +28,7 @@ public class LectorBuffer extends BufferedReader {
 	
 	/* Leo el proximo caracter */
 	public int LeerProximoCaracter() throws IOException {
+	
 		if (this.ultimoCaracterFueLeido)
 			this.ultimoCaracterFueLeido = false;
 		else {
