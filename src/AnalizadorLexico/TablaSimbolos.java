@@ -16,9 +16,9 @@ public class TablaSimbolos {
 	}
 	
 	/* Para agregar un simbolo */
-	public void addTokens(String token,Integer id) {
-		if (!this.simbolos.containsKey(token))
-			this.simbolos.put(token, id);
+	public void addTokens(String simbolo,Integer id) {
+		if (!this.simbolos.containsKey(simbolo))
+			this.simbolos.put(simbolo, id);
 	}
 	
 	/* Obtener un simbolo */

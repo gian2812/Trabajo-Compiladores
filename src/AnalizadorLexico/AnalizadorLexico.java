@@ -57,6 +57,7 @@ public class AnalizadorLexico {
 	
 	/* Nos devuelve el siguiente estado */
 	public int getSiguienteEstado( int i, int j) {
+		System.out.println("i"+i+"j"+j);
 		return this.matrizTransicionEstados[i][j]; 
 	}
 	
@@ -71,6 +72,23 @@ public class AnalizadorLexico {
 			}
 			System.out.println("|");
 		}
+	}
+	
+	public Token getToken() throws IOException {
+		char c;
+		Token t=null;
+		int estado = 0;
+		lexema = ""; 
+		int estadosig = 0;
+		while ((estado != ERROR) && (estado != FINAL)) {
+			c = (char) buffer.LeerProximoCaracter();
+			int col = paridad(c);
+			estadosig = getSiguienteEstado(estado,col);
+			matrizAcciones.getSiguienteEstado(estado,col).execute(this, c);
+			estado = estadosig;
+		}
+		t=new Token(lexema);
+		return t;
 	}
 	
 	/*------Fin de las funciones de la matriz de transicion de estados------*/
