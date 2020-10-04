@@ -48,6 +48,7 @@ public class AnalizadorLexico {
 		buffer = new LectorBuffer(new InputStreamReader(new FileInputStream(path)));
 		matrizAcciones = new MatrizAcciones();
 		
+		
 	}
 	
 	
