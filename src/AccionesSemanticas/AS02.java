@@ -1,5 +1,7 @@
 package AccionesSemanticas;
 
+import AnalizadorLexico.AnalizadorLexico;
+
 public class AS02 extends AccionSemantica{
 	
 	/* Accion semantica numero 2
@@ -12,7 +14,7 @@ public class AS02 extends AccionSemantica{
 		super();
 	}
 	
-	public void execute() {
+	public void execute(AnalizadorLexico a_lexico,char c) {
 		//do something
 	}
 	

@@ -1,6 +1,10 @@
 package AnalizadorLexico;
 
 public class AnalizadorLexico {
+	public int pos = 0;
+	public int nroLinea = 1; //se comienza a leer el archivo desde la linea 1 
+	public String cadena;
+	public PalabrasReservadas PR= new PalabrasReservadas();
 	static short ERROR = -1 ;
 	static short FINAL = 5 ;
 	static final short[][] matrizTransicionEstados = {

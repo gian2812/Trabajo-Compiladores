@@ -1,5 +1,7 @@
 package AccionesSemanticas;
 
+import AnalizadorLexico.AnalizadorLexico;
+
 public class AS07 extends AccionSemantica {
 	
 	/* Accion semantica numero 7
@@ -13,8 +15,8 @@ public class AS07 extends AccionSemantica {
 	}
 
 	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
+	public void execute(AnalizadorLexico a_lexico,char c) {
+		a_lexico.pos--;//Vuelve a la entrada el ultimo caracter 
 		
 	}
 

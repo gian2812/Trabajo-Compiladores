@@ -14,6 +14,7 @@ public class MatrizAcciones {
 	private static final ASNula asNula = new ASNula();
 	private AccionSemantica [][] matrizTransicion;
 	
+	
 	public MatrizAcciones() {
 		matrizTransicion = new AccionSemantica[][] {
 			/*        letra   digito    f       /      *       +       -      = 	   <	   >	    {	    }	    (	    )	    ,	   ;	   "	   .	    %	    _   Blanco-tab	    i	   !	otro	   nl	     	   

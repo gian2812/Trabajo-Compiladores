@@ -1,5 +1,7 @@
 package AccionesSemanticas;
 
+import AnalizadorLexico.AnalizadorLexico;
+
 public class AS01 extends AccionSemantica {
 	
 	/* Accion semantica numero uno
@@ -14,8 +16,16 @@ public class AS01 extends AccionSemantica {
 		super();
 	}
 	
-	public void execute() {
-		//do something
+	public void execute(AnalizadorLexico a_lexico,char c) {
+		
+		if (a_lexico.cadena.length() < 20) {
+			//tirar warning
+			a_lexico.cadena+=c;
+			
+		}
+		else {
+			//tirar warning;
+		}
 	}
 	
 	public String toString() {

@@ -1,5 +1,6 @@
 package AccionesSemanticas;
 
+import AnalizadorLexico.AnalizadorLexico;
 
 public class ASNula extends AccionSemantica{
 
@@ -13,7 +14,7 @@ public class ASNula extends AccionSemantica{
 	}
 
 	@Override
-	public void execute() {
+	public void execute(AnalizadorLexico a_lexico,char c) {
 		// TODO Auto-generated method stub
 		
 	}

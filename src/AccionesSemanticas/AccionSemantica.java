@@ -1,10 +1,16 @@
 package AccionesSemanticas;
 
+import AnalizadorLexico.AnalizadorLexico;
 
 public abstract class AccionSemantica {
 	
 	public AccionSemantica() {
 	}
-	
-	public abstract void execute();
+
+	public void execute(AnalizadorLexico a_lexico, char c) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 }

@@ -1,5 +1,6 @@
 package AccionesSemanticas;
 
+import AnalizadorLexico.AnalizadorLexico;
 
 public class AS09 extends AccionSemantica{
 
@@ -13,7 +14,9 @@ public class AS09 extends AccionSemantica{
 	}
 
 	@Override
-	public void execute() {
+	public void execute(AnalizadorLexico a_lexico,char c) {
+		a_lexico.cadena+=c;
+		//agregar a la tabla de simbolos si no existe
 		// TODO Auto-generated method stub
 		
 	}
