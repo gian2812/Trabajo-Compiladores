@@ -5,9 +5,9 @@ public class AnalizadorLexico {
 	public int nroLinea = 1; //se comienza a leer el archivo desde la linea 1 
 	public String cadena;
 	public PalabrasReservadas PR= new PalabrasReservadas();
-	static short ERROR = -1 ;
-	static short FINAL = 5 ;
-	static final short[][] matrizTransicionEstados = {
+	private static final int FINAL = -1 ;
+	private static final int ERROR = -2 ;
+	private static final int[][] matrizTransicionEstados = {
 			
 			/*        letra   digito    f       /      *       +       -      = 	   <	   >	    {	    }	    (	    )	    ,	   ;	   "	   .	    %	    _    Blanco-tab	 i	     !	   otro	    nl	     	   
 			/* 0*/	{    1,      2,      1,      6,  FINAL,  FINAL,  FINAL,    9  ,    10 ,    11 ,  FINAL,  FINAL,  FINAL,  FINAL,  FINAL,  FINAL,   12  ,     15,  ERROR,  ERROR,      0,      1,     14,  FINAL,   FINAL},
@@ -35,6 +35,16 @@ public class AnalizadorLexico {
 	public AnalizadorLexico() {
 		
 	}
+	
+	
+	/*------Funciones de la matriz de transicion de estados------*/
+	
+	/* Nos devuelve el siguiente estado */
+	public int getSiguienteEstado( int i, int j) {
+		return this.matrizTransicionEstados[i][j]; 
+	}
+	
+	/* Muestra la matriz de transicion de estados */
 	public void mostrarMatriz() {
 		for(int i=0; i<this.matrizTransicionEstados.length; i++) {
 			System.out.print("|");
@@ -46,6 +56,8 @@ public class AnalizadorLexico {
 			System.out.println("|");
 		}
 	}
+	
+	/*------Fin de las funciones de la matriz de transicion de estados------*/
 
 
 }

@@ -3,11 +3,15 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/*-----Importaciones del paquete Analizador lexico-----*/
 import AnalizadorLexico.AnalizadorLexico;
 import AnalizadorLexico.LectorBuffer;
 import AnalizadorLexico.PalabrasReservadas;
 import AnalizadorLexico.TablaTokens;
+
+/*-----Importaciones del paqute de Acciones semanticssas----*/
 import AccionesSemanticas.AccionSemantica;
+import AccionesSemanticas.MatrizAcciones;
 
 public class Main {
 
@@ -42,9 +46,13 @@ public class Main {
 		table.imprimirTabla();
 		*/
 		
-		/*-----Prueba Matriz de transicion-----*/
-		AnalizadorLexico m = new AnalizadorLexico();
-		m.mostrarMatriz();
+		/*-----Prueba Matriz de transicion-----
+		AnalizadorLexico matrizEstados = new AnalizadorLexico();
+		matrizEstados.mostrarMatriz();
+		*/
 		
+		/*-----Prueba matriz de acciones semanticas-----*/
+		MatrizAcciones matrizAcciones = new MatrizAcciones();
+		matrizAcciones.mostrarMatriz();
 	}
 }
