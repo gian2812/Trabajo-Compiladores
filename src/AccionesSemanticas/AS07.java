@@ -6,7 +6,7 @@ public class AS07 extends AccionSemantica {
 	
 	/* Accion semantica numero 7
 	 * vuelve al caracter anterior
-	 *ejemplo: precio = precio + 1
+	 * ejemplo: precio = precio + 1
 	 */
 
 	public AS07() {
@@ -16,8 +16,9 @@ public class AS07 extends AccionSemantica {
 
 	@Override
 	public void execute(AnalizadorLexico a_lexico,char c) {
-		a_lexico.pos--;//Vuelve a la entrada el ultimo caracter 
-		
+		int pos = a_lexico.getPos();
+		pos--;
+		a_lexico.setPos(pos); //Vuelve a la entrada el ultimo caracter 
 	}
 
 	@Override

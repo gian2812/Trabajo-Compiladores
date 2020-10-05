@@ -15,8 +15,9 @@ public class AS08 extends AccionSemantica{
 
 	@Override
 	public void execute(AnalizadorLexico a_lexico,char c) {
-		// TODO Auto-generated method stub
-		
+		int linea = a_lexico.getNroLinea();
+		linea++;
+		a_lexico.setNroLinea(linea);
 	}
 	
 	@Override

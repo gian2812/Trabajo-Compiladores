@@ -13,8 +13,8 @@ public class AnalizadorLexico {
 	public int pos = 0;
 	public int nroLinea = 1; //se comienza a leer el archivo desde la primer linea
 	public String lexema;
-	public TablaSimbolos TS=new TablaSimbolos();
-	public PalabrasReservadas PR= new PalabrasReservadas();
+	public TablaSimbolos ts = new TablaSimbolos();
+	public PalabrasReservadas pr = new PalabrasReservadas();
 	private LectorBuffer buffer;
 	private MatrizAcciones matrizAcciones;
 	private static final int FINAL = -1 ;
@@ -45,15 +45,9 @@ public class AnalizadorLexico {
 			}; 
 	
 	public AnalizadorLexico(String path) throws IOException {
-
 		buffer = new LectorBuffer(new InputStreamReader(new FileInputStream(path)));
 		matrizAcciones = new MatrizAcciones();
-		
-		
 	}
-	
-	
-	/*------Funciones de la matriz de transicion de estados------*/
 	
 	/* Nos devuelve el siguiente estado */
 	public int getSiguienteEstado( int i, int j) {
@@ -76,7 +70,7 @@ public class AnalizadorLexico {
 	
 	public Token getToken() throws IOException {
 		char c;
-		Token t=null;
+		Token t = null;
 		int estado = 0;
 		lexema = ""; 
 		int estadosig = 0;
@@ -87,11 +81,11 @@ public class AnalizadorLexico {
 			matrizAcciones.getSiguienteEstado(estado,col).execute(this, c);
 			estado = estadosig;
 		}
-		t=new Token(lexema);
+		t = new Token(lexema);
 		return t;
 	}
 	
-	/*------Fin de las funciones de la matriz de transicion de estados------*/
+	
 	private int paridad(char c) {
 		if (c == 'f')
 			return 2;
@@ -142,8 +136,6 @@ public class AnalizadorLexico {
 		if ((int)c == 10)
 			return 24;
 		return 23;
-			
-		
 	}
 	
 	public int getNroLinea() {
@@ -167,14 +159,36 @@ public class AnalizadorLexico {
 
 
 	public PalabrasReservadas getPR() {
-		return PR;
+		return pr;
 	}
 
 
 	public void setPR(PalabrasReservadas pR) {
-		PR = pR;
+		pr = pR;
 	}
 
+	public boolean isKey(String key) {
+		if(this.ts.isKey(key))
+			return true;
+		else
+			return false;
+	}
 
+	public void addSimbolo(String lexema, Integer id) {
+		ts.addSimbolo(lexema, id);
+	}
+	
+	public boolean isPalabraReservada(String l) {
+		return pr.isPalabraReservada(l);
+	}
 
+	public int getPos() {
+		return pos;
+	}
+
+	public void setPos(int pos) {
+		this.pos = pos;
+	}
+	
+	
 }

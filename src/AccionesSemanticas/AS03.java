@@ -14,8 +14,9 @@ public class AS03 extends AccionSemantica {
 	}
 	
 	public void execute(AnalizadorLexico a_lexico,char c) {
-		//do something
-		a_lexico.lexema+=c;
+		String lexema = a_lexico.getLexema();
+		lexema += c;
+		a_lexico.setLexema(lexema);
 	}
 
 	@Override

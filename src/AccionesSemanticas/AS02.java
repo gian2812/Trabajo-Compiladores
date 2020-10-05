@@ -15,7 +15,9 @@ public class AS02 extends AccionSemantica{
 	}
 	
 	public void execute(AnalizadorLexico a_lexico,char c) {
-		a_lexico.lexema+=c;
+		String lexema = a_lexico.getLexema();
+		lexema += c;
+		a_lexico.setLexema(lexema);
 	}
 	
 	public String toString() {

@@ -15,9 +15,9 @@ public class AS09 extends AccionSemantica{
 
 	@Override
 	public void execute(AnalizadorLexico a_lexico,char c) {
-		a_lexico.lexema+=c;
-		//agregar a la tabla de simbolos si no existe
-		// TODO Auto-generated method stub
+		String lexema = a_lexico.getLexema();
+		lexema += c;
+		a_lexico.setLexema(lexema);
 		
 	}
 	

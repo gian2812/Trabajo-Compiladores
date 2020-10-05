@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class PalabrasReservadas {
 	
-	/* Tenemos que ponerles un ID que nos da el yacc*/
+	
 	private ArrayList<String> listaPR = new ArrayList<String>();
 	
 	public PalabrasReservadas() {
@@ -24,7 +24,7 @@ public class PalabrasReservadas {
 		listaPR.add(p);
 	}
 	
-	public boolean isPalabraReservada(String L) {
-		return listaPR.contains(L);
+	public boolean isPalabraReservada(String l) {
+		return listaPR.contains(l);
 	}
 }
