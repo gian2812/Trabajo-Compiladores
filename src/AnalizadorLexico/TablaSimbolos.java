@@ -16,19 +16,23 @@ public class TablaSimbolos {
 	}
 	
 	/* Para agregar un simbolo */
-	public void addTokens(String simbolo,Integer id) {
-		if (!this.simbolos.containsKey(simbolo))
-			this.simbolos.put(simbolo, id);
+	public void addSimbolo(String lexema,Integer id) {
+		if (!this.simbolos.containsKey(lexema))
+			this.simbolos.put(lexema, id);
 	}
 	
 	/* Obtener un simbolo */
-	public Integer getTokens(Integer id) {
+	public Integer getSimbolo(Integer id) {
 		return this.simbolos.get(id);
 	}
 
 	/* Elimina un simbolo */
-	public void removeToken(Integer id) {
+	public void removeSimbolo(Integer id) {
 		this.simbolos.remove(id);
+	}
+	
+	public boolean isKey(String lexema) {
+		return this.simbolos.containsKey(lexema);
 	}
 	
 	/* Imprime por pantalla la tabla */
@@ -37,7 +41,7 @@ public class TablaSimbolos {
 		Iterator it = simbolos.entrySet().iterator();
 		while (it.hasNext()) {
 		    Map.Entry e = (Entry) it.next();
-		    System.out.println("Token: " + e.getKey() + " ID: " + e.getValue());
+		    System.out.println("Lexema: " + e.getKey() + " ID: " + e.getValue());
 		}
 	}
 }

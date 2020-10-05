@@ -13,7 +13,7 @@ public class AnalizadorLexico {
 	public int pos = 0;
 	public int nroLinea = 1; //se comienza a leer el archivo desde la primer linea
 	public String lexema;
-	
+	public TablaSimbolos TS=new TablaSimbolos();
 	public PalabrasReservadas PR= new PalabrasReservadas();
 	private LectorBuffer buffer;
 	private MatrizAcciones matrizAcciones;

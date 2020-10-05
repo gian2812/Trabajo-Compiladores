@@ -15,16 +15,23 @@ public class AS01 extends AccionSemantica {
 	public AS01() {
 		super();
 	}
-	
+	//falta volver caracter a entrada
 	public void execute(AnalizadorLexico a_lexico,char c) {
-		
-		if (a_lexico.lexema.length() < 20) {
-			//tirar warning
-			a_lexico.lexema+=c;
-			
-		}
-		else {
-			//tirar warning;
+		//variable lexema
+		if (!a_lexico.PR.isPalabraReservada(a_lexico.lexema)){
+			if (a_lexico.lexema.length() < 20) {
+				//tirar warning
+				a_lexico.lexema = a_lexico.lexema.substring(0,19);
+				System.out.println("Warning longitud del lexema sobrepasa los limites en linea "+a_lexico.nroLinea);
+				
+			}
+			boolean hasUppercase = !a_lexico.lexema.equals(a_lexico.lexema.toLowerCase());
+			if (hasUppercase) {
+				System.out.println("Warning identificador contiene letra mayuscula");
+				a_lexico.lexema = a_lexico.lexema.toLowerCase();
+			}
+			if (!a_lexico.TS.isKey(a_lexico.lexema))
+				a_lexico.TS.addSimbolo(a_lexico.lexema, 0);
 		}
 	}
 	
