@@ -18,6 +18,7 @@ public class AS01 extends AccionSemantica {
 	//falta volver caracter a entrada
 	public void execute(AnalizadorLexico a_lexico,char c) {
 		//variable lexema
+		int i=0;
 		if (!a_lexico.isPalabraReservada(a_lexico.getLexema())) {
 			if (a_lexico.getLexema().length() < 20) {
 				//tirar warning
@@ -32,6 +33,8 @@ public class AS01 extends AccionSemantica {
 			if (!a_lexico.isKey(a_lexico.getLexema()))
 				a_lexico.addSimbolo(a_lexico.getLexema(), 0);
 		}
+		i = a_lexico.getIndice() -1;
+		a_lexico.setIndice(i);
 	}
 	
 	public String toString() {

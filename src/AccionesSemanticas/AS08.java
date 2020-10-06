@@ -18,6 +18,8 @@ public class AS08 extends AccionSemantica{
 		int linea = a_lexico.getNroLinea();
 		linea++;
 		a_lexico.setNroLinea(linea);
+		String lexema = a_lexico.getLexema() + c ;
+		a_lexico.setLexema(lexema);
 	}
 	
 	@Override

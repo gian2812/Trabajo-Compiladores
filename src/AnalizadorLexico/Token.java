@@ -29,7 +29,7 @@ public class Token {
 		this.nro = getNro();
 	}
 		
-	private int getNro() {
+	public int getNro() {
 		if (lexema.equals("+"))
 			return 43;
 		if (lexema.equals("-"))

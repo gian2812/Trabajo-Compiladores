@@ -16,9 +16,9 @@ public class AS07 extends AccionSemantica {
 
 	@Override
 	public void execute(AnalizadorLexico a_lexico,char c) {
-		int pos = a_lexico.getPos();
+		int pos = a_lexico.getIndice();
 		pos--;
-		a_lexico.setPos(pos); //Vuelve a la entrada el ultimo caracter 
+		a_lexico.setIndice(pos); //Vuelve a la entrada el ultimo caracter 
 	}
 
 	@Override

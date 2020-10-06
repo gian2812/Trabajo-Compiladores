@@ -4,18 +4,21 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import AccionesSemanticas.MatrizAcciones;
 
 public class AnalizadorLexico {
 	
-	public int pos = 0;
 	public int nroLinea = 1; //se comienza a leer el archivo desde la primer linea
 	public String lexema;
 	public TablaSimbolos ts = new TablaSimbolos();
 	public PalabrasReservadas pr = new PalabrasReservadas();
-	private LectorBuffer buffer;
+	private String programa;
+	private int indice;
+
+
 	private MatrizAcciones matrizAcciones;
 	private static final int FINAL = -1 ;
 	private static final int ERROR = -2 ;
@@ -45,8 +48,9 @@ public class AnalizadorLexico {
 			}; 
 	
 	public AnalizadorLexico(String path) throws IOException {
-		buffer = new LectorBuffer(new InputStreamReader(new FileInputStream(path)));
 		matrizAcciones = new MatrizAcciones();
+		this.programa = new String(Files.readAllBytes(Paths.get(path)));
+		System.out.println(programa);
 	}
 	
 	/* Nos devuelve el siguiente estado */
@@ -70,16 +74,18 @@ public class AnalizadorLexico {
 	
 	public Token getToken() throws IOException {
 		char c;
+		int i=0;
 		Token t = null;
 		int estado = 0;
 		lexema = ""; 
 		int estadosig = 0;
-		while ((estado != ERROR) && (estado != FINAL)) {
-			c = (char) buffer.LeerProximoCaracter();
+		while ((estado != ERROR) && (estado != FINAL) && i<=this.programa.length()) {
+			c = this.programa.charAt(i);
 			int col = paridad(c);
 			estadosig = getSiguienteEstado(estado,col);
 			matrizAcciones.getSiguienteEstado(estado,col).execute(this, c);
 			estado = estadosig;
+			i++;
 		}
 		t = new Token(lexema);
 		return t;
@@ -182,12 +188,13 @@ public class AnalizadorLexico {
 		return pr.isPalabraReservada(l);
 	}
 
-	public int getPos() {
-		return pos;
+	
+	public int getIndice() {
+		return indice;
 	}
 
-	public void setPos(int pos) {
-		this.pos = pos;
+	public void setIndice(int indice) {
+		this.indice = indice;
 	}
 	
 	

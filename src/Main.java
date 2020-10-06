@@ -6,14 +6,14 @@ import java.io.InputStreamReader;
 
 /*-----Importaciones del paquete Analizador lexico-----*/
 import AnalizadorLexico.AnalizadorLexico;
-import AnalizadorLexico.LectorBuffer;
+
 import AnalizadorLexico.PalabrasReservadas;
 import AnalizadorLexico.TablaSimbolos;
 
 /*-----Importaciones del paqute de Acciones semanticssas----*/
 import AccionesSemanticas.AccionSemantica;
 import AccionesSemanticas.MatrizAcciones;
-
+import AnalizadorSintatico.*;
 public class Main {
 
 	// Funcion para inicializar la matriz de chars
@@ -29,12 +29,13 @@ public class Main {
 		
 		/* -----Para leer linea por linea de un archivo------------- String cadena = "";
 		 */
-		  char cadena;
-		  LectorBuffer leerArchivo; 
+		  char cadena; 
 		  String path = "C:\\Users\\Gian\\Desktop\\Compiladores\\prueba2.txt"; 
 			//  System.out.println((char)leerArchivo.LeerProximoCaracter());
 			AnalizadorLexico al = new AnalizadorLexico(path);
-			System.out.println(al.getToken().toString());
+			//System.out.println(al.getToken().toString());
+		//Parser p = new Parser("C:\\Users\\Gian\\Desktop\\Compiladores\\prueba2.txt");
+		//p.run();
 			
 	}
 		 
