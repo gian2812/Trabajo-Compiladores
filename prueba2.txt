@@ -1,4 +1,0 @@
-INTEGER a;
-IF asd < sd { 
-	INTEGER b 
-}
