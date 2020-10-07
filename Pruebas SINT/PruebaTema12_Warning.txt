@@ -1,0 +1,6 @@
+INTEGER a,b;
+a = 3_i;
+b = 1_i;
+WHILE(a > b LOOP{
+	OUT("ANDA TODO CORRECTO");
+	a = a-b;};

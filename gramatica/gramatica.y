@@ -176,6 +176,10 @@ public Parser(String path) {
 }
 private String valor;
 
+public void imprimirTS() {
+	al.imprimirTS();
+}
+
 private  int yylex(){
 	Token aux = al.yylex(valor);
 	while (aux.getNro() == -1) {
@@ -190,7 +194,7 @@ private  int yylex(){
 	return aux.getNro();
 }
 private void yyerror(String s) {
-	System.out.println("upss");
+	//System.out.println("upss");
 }
 private void yyerror() {
 	//do nothing;

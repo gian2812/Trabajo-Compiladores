@@ -1,0 +1,2 @@
+INTEGER a,b,c;
+FLOAT q,e;
