@@ -1,4 +1,5 @@
 import java.io.FileInputStream;
+import AnalizadorLexico.Token;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,37 +28,18 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		
-		/* -----Para leer linea por linea de un archivo------------- String cadena = "";
-		 */
-		  char cadena; 
-		  String path = "C:\\Users\\Gian\\Desktop\\Compiladores\\prueba2.txt"; 
-			//  System.out.println((char)leerArchivo.LeerProximoCaracter());
-			AnalizadorLexico al = new AnalizadorLexico(path);
-			//System.out.println(al.getToken().toString());
-		//Parser p = new Parser("C:\\Users\\Gian\\Desktop\\Compiladores\\prueba2.txt");
-		//p.run();
+		/* String path = "C:\\Users\\Gian\\Desktop\\Compiladores\\Pruebas LEX\\pruebaPRlowercase.txt"; 
+		 AnalizadorLexico al = new AnalizadorLexico(path);
+		 Token tokenleido = new Token("hola");
+		 String pv = null ;
+		 while (tokenleido.getNro() != 0) {
+			 tokenleido = al.yylex(pv);
+			 System.out.println("token leido "+tokenleido);
+		 }
+		 al.imprimirTS();*/
+		Parser p = new Parser("C:\\Users\\Gian\\Desktop\\Compiladores\\Pruebas SINT\\declaracion.txt");
+		p.run();
 			
-	}
-		 
-
-		/*------Prueba de si devuelve una palabra reservada--------------
-		System.out.println(PalabrasReservadas.getPalabraReservada(3));
-		*/
-
-		/*-----Prueba de tabla de tokens-----
-		TablaTokens table = new TablaTokens();
-		table.addTokens(";(", 3);
-		table.addTokens(")", 4);
-		table.imprimirTabla();
-		*/
-		
-		/*-----Prueba Matriz de transicion-----
-		AnalizadorLexico matrizEstados = new AnalizadorLexico();
-		matrizEstados.mostrarMatriz();
-		*/
-		
-		/*-----Prueba matriz de acciones semanticas-----*/
-		//MatrizAcciones matrizAcciones = new MatrizAcciones();
-		//matrizAcciones.mostrarMatriz();
+		}
 	}
 

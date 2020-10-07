@@ -5,7 +5,8 @@ import AnalizadorLexico.AnalizadorLexico;
 public class AS09 extends AccionSemantica{
 
 	/* Accion semantica numero 9
-	 * Meter en la tabla de simbolo si no existe y agregar el caracter al string
+	 * Agregar el caracter al string y meter en la tabla de simbolo si no existe. 
+	 * Controla que se cierra la cadena 
 	 */
 	
 	public AS09() {
@@ -15,9 +16,12 @@ public class AS09 extends AccionSemantica{
 
 	@Override
 	public void execute(AnalizadorLexico a_lexico,char c) {
-		String lexema = a_lexico.getLexema();
-		lexema += c;
-		a_lexico.setLexema(lexema);
+		String lex = a_lexico.getLexema();
+		lex += c;
+		a_lexico.setLexema(lex);
+		if (!a_lexico.isKey(lex))
+			a_lexico.addSimbolo(lex, 3);//Cadena Multilinea
+		a_lexico.setCadena(false);
 		
 	}
 	

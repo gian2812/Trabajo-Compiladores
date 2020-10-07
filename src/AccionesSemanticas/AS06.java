@@ -5,7 +5,7 @@ import AnalizadorLexico.AnalizadorLexico;
 public class AS06 extends AccionSemantica{
 
 	/* Accion semantica numero 6
-	 * No chequea el salto de linea solamente agrega +1 al contador de linea
+	 * Agrega +1 al contador de linea 
 	 */
 	
 	public AS06() {

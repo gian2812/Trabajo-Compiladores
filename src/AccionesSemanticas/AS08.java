@@ -5,7 +5,7 @@ import AnalizadorLexico.AnalizadorLexico;
 public class AS08 extends AccionSemantica{
 	
 	/* Accion Semantica numero 8
-	 * Aumenta +1 al contador de linea y agrega el caracter al string
+	 *Cuenta el salto de linea y elimina el "-" de la cadena
 	 */
 
 	public AS08() {
@@ -18,7 +18,7 @@ public class AS08 extends AccionSemantica{
 		int linea = a_lexico.getNroLinea();
 		linea++;
 		a_lexico.setNroLinea(linea);
-		String lexema = a_lexico.getLexema() + c ;
+		String lexema = a_lexico.getLexema().substring(0, a_lexico.getLexema().length()-1); 
 		a_lexico.setLexema(lexema);
 	}
 	

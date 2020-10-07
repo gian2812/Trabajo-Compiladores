@@ -11,6 +11,9 @@ public class MatrizAcciones {
 	private static final AS07 as07 = new AS07();
 	private static final AS08 as08 = new AS08();
 	private static final AS09 as09 = new AS09();
+	private static final AS10 as10 = new AS10();
+	private static final AS11 as11 = new AS11();
+	private static final AS12 as12 = new AS12();
 	private static final ASNula asNula = new ASNula();
 	private AccionSemantica [][] matrizAcciones;
 	
@@ -18,22 +21,22 @@ public class MatrizAcciones {
 	public MatrizAcciones() {
 		matrizAcciones= new AccionSemantica[][] {
 			/*        letra   digito    f       /      *       +       -      = 	   <	   >	    {	    }	    (	    )	    ,	   ;	   "	   .	    %	    _   Blanco-tab	    i	   !	otro	   nl	     	   
-			/* 0*/	{  as02,   as02, as02,   as02,   as02,  as02,   as02,  as02,    as02,    as02,   as02,   as02,   as02,   as02,   as02,   as02,  as02,   as02,  asNula,  asNula,     asNula,  as02,  as02,  asNula,   as06},
-			/* 1*/	{  as03,   as03, as03,   as01,   as01,  as01,   as01,  as01,    as01,    as01,   as01,   as01,   as01,   as01,   as01,   as01,  as01,   as01,    as01,    as03,       as01,  as03,  as01,    as01,   as01},
-			/* 2*/	{asNula,   as03,asNula,asNula, asNula,asNula, asNula,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula,   as03,  asNula,  asNula,     asNula,asNula,asNula,  asNula, asNula},
+			/* 0*/	{  as02,   as02, as02,   as02,   as02,  as02,   as02,  as02,    as02,    as02,   as02,   as02,   as02,   as02,   as02,   as02,  as10,   as02,  asNula,  asNula,     asNula,  as02,  as02,  asNula,   as06},
+			/* 1*/	{  as03,   as03, as03,   as01,   as01,  as01,   as01,  as01,    as01,    as01,   as01,   as01,   as01,   as01,   as01,   as01,  as01,   as01,    as01,    as03,       as01,  as03,  as01,    as01, 	 as01},
+			/* 2*/	{asNula,   as03,asNula,asNula, asNula,asNula, asNula,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula,   as03,  asNula,  asNula,     asNula,asNula,asNula,  asNula,   as06},
 			/* 3*/	{  as05,   as03, as03,   as05,   as05,  as05,   as05,  as05,    as05,    as05,   as05,   as05,   as05,   as05,   as05,   as05,  as05,   as05,    as05,    as05,       as05,  as05,  as05,    as05,   as05},
-			/* 4*/	{asNula, asNula,asNula,asNula, asNula,  as03,   as03,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,asNula,asNula,  asNula, asNula},
-			/* 5*/	{asNula,   as03,asNula,asNula, asNula,asNula, asNula,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,asNula,asNula,  asNula, asNula},
-			/* 6*/	{  as07,   as07,  as07,  as07,   as07,  as07,   as07,  as07,    as07,    as07,   as07,   as07,   as07,   as07,   as07,   as07,  as07,   as07,    as07,  asNula,       as07,  as07,  as07,    as07,   as07},
+			/* 4*/	{asNula, asNula,asNula,asNula, asNula,  as03,   as03,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,asNula,asNula,  asNula,   as06},
+			/* 5*/	{asNula,   as03,asNula,asNula, asNula,asNula, asNula,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,asNula,asNula,  asNula,   as06},
+			/* 6*/	{  as07,   as07,  as07,  as07,   as07,  as07,   as07,  as07,    as07,    as07,   as07,   as07,   as07,   as07,   as07,   as07,  as07,   as07,    as11,  asNula,       as07,  as07,  as07,    as07,   as07},
 			/* 7*/	{asNula, asNula,asNula,asNula, asNula,asNula, asNula,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,asNula,asNula,  asNula,   as06},
-			/* 8*/	{asNula, asNula,asNula,asNula, asNula,asNula, asNula,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,asNula,asNula,  asNula,   as06},
+			/* 8*/	{asNula, asNula,asNula,  as12, asNula,asNula, asNula,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,asNula,asNula,  asNula,   as06},
 			/* 9*/	{  as07,   as07,  as07,  as07,   as07,  as07,   as07,  as03,    as07,    as07,   as07,   as07,   as07,   as07,   as07,   as07,  as07,   as07,    as07,    as07,       as07,  as07,  as07,    as07,   as07},
 			/*10*/  {  as07,   as07,  as07,  as07,   as07,  as07,   as07,  as03,    as07,    as07,   as07,   as07,   as07,   as07,   as07,   as07,  as07,   as07,    as07,    as07,       as07,  as07,  as07,    as07,   as07},
 			/*11*/	{  as07,   as07,  as07,  as07,   as07,  as07,   as07,  as03,    as07,    as07,   as07,   as07,   as07,   as07,   as07,   as07,  as07,   as07,    as07,    as07,       as07,  as07,  as07,    as07,   as07},
-			/*12*/	{  as03,   as03,  as03,  as03,   as03,  as03,   as03,  as03,    as03,    as03,   as03,   as03,   as03,   as03,   as03,   as03,  as09,   as03,    as03,    as03,       as03,  as03,  as03,    as03, asNula},
-			/*13*/	{asNula, asNula,asNula,asNula, asNula,asNula, asNula,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,  as04,asNula,  asNula, asNula},
-			/*14*/	{asNula, asNula,asNula,asNula, asNula,asNula, asNula,  as03,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,asNula,asNula,  asNula, asNula},
-			/*15*/	{asNula,   as03,asNula,asNula, asNula,asNula, asNula,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,asNula,asNula,  asNula, asNula},
+			/*12*/	{  as03,   as03,  as03,  as03,   as03,  as03,   as03,  as03,    as03,    as03,   as03,   as03,   as03,   as03,   as03,   as03,  as09,   as03,    as03,    as03,       as03,  as03,  as03,    as03, 	 as06},
+			/*13*/	{asNula, asNula,asNula,asNula, asNula,asNula, asNula,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,  as04,asNula,  asNula,   as06},
+			/*14*/	{asNula, asNula,asNula,asNula, asNula,asNula, asNula,  as03,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,asNula,asNula,  asNula,   as06},
+			/*15*/	{asNula,   as03,asNula,asNula, asNula,asNula, asNula,asNula,  asNula,  asNula, asNula, asNula, asNula, asNula, asNula, asNula,asNula, asNula,  asNula,  asNula,     asNula,asNula,asNula,  asNula,   as06},
 			/*16*/	{  as05,   as03, as05,   as05,   as05,  as05,   as05,  as05,    as05,    as05,   as05,   as05,   as05,   as05,   as05,   as05,  as05,   as05,    as05,    as05,       as05,  as05,  as05,    as05,   as05},
 			/*17*/	{  as03,   as03,  as03,  as03,   as03,  as03,   as03,  as03,    as03,    as03,   as03,   as03,   as03,   as03,   as03,   as03,  as09,   as03,    as03,    as03,       as03,  as03,  as03,    as03,   as08}
 			};

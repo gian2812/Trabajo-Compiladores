@@ -10,13 +10,14 @@ import java.util.Hashtable;
 
 %%
 
-programa 	: body
+programa 	: body{ System.out.println("se analizo el programa correctamente")}
 			;
 			
 body		:  body sentencia ';' 
 			|  sentencia ';'
+			;
 			
-sentencia	| ejecutable
+sentencia	: ejecutable
 			| declarativa
 			;
 			
@@ -46,17 +47,18 @@ dparametro  : tipo ID
             | VAR tipo ID
 			;
 			
-listavariables : ID
+listavariables : ID {System.out.println($1.sval);}
 			   | listavariables ',' ID
 			   ;
 			   
-asignacion	: ID ASSIGN expresion 
+asignacion	: ID '=' expresion 
 			;
 
 salida		: OUT '(' CADENA ')' 
 			;
 			
 control 	: WHILE '(' condicion ')' LOOP bodycontrol 
+			| WHILE '(' condicion LOOP bodycontrol {System.out.println("Warning Falta parentesis de cierre") }
 			;
 			
 seleccion 	: IF '(' condicion ')'  bodycontrol  ELSE  bodycontrol  END_IF 
@@ -65,11 +67,7 @@ seleccion 	: IF '(' condicion ')'  bodycontrol  ELSE  bodycontrol  END_IF
 			
 invocacion 	: ID '(' listavariables ')' 
 			| ID '(' ')' 
-			;		
-
-boolean 	: TRUE
-			| FALSE
-			;			
+			;				
 
 
 bodycontrol : sentenciacontrol ';'
@@ -113,13 +111,13 @@ termino 	: termino '*' factor
 			;		
 			
 factor		: ID
- 			| CTE_INT { /* if (Integer.parseInt($1.sval) == 32768){
+ 			| CONST_INT { /* if (Integer.parseInt($1.sval) == 32768){
  							System.out.println("Constante positiva fuera de rango");
 							$1.sval = "32767";
 							ts.addSimbolo("32767",0);
 								}
 						*/	}		
-			| '-' CTE_INT  {/*	if (!tSimbolos.containsKey("-"+$2.sval))
+			| '-' CONST_INT {/*	if (!tSimbolos.containsKey("-"+$2.sval))
 								tSimbolos.put("-"+$2.sval, 1);
 							else 
 								tSimbolos.replace("-"+$2.sval, (tSimbolos.get("-"+$2.sval)+1));
@@ -127,8 +125,8 @@ factor		: ID
 							if (tSimbolos.get($2.sval) == 0)
 									tSimbolos.remove($2.sval);
 								*/}
-			| CTE_FLOAT {}
-			| '-' CTE_FLOAT {/*if (!tSimbolos.containsKey("-"+$2.sval))
+			| CONST_FLOAT {}
+			| '-' CONST_FLOAT {/*if (!tSimbolos.containsKey("-"+$2.sval))
 								tSimbolos.put("-"+$2.sval, 1);
 							else 
 								tSimbolos.replace("-"+$2.sval, (tSimbolos.get("-"+$2.sval)+1));

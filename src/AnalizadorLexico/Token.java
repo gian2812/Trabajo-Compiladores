@@ -2,25 +2,31 @@ package AnalizadorLexico;
 
 public class Token {
 
-	private static final int MENORIGUAL = 0;
-	private static final int CONST_INT = 0;
-	private static final int CONST_FLOAT = 0;
-	private static final int MAYORIGUAL = 0;
-	private static final int IGUALIGUAL = 0;
-	private static final int DISTINTO = 0;
-	private static final int CADENA = 0;
-	private static final int IF = 0;
-	private static final int ELSE = 0;
-	private static final int END_IF = 0;
-	private static final int OUT = 0;
-	private static final int THEN = 0;
-	private static final int FUNC = 0;
-	private static final int RETURN = 0;
-	private static final int INTEGER = 0;
-	private static final int FLOAT = 0;
-	private static final int WHILE = 0;
-	private static final int LOOP = 0;
-	private static final int ID = 0;
+	public final static short PROC=257;
+	public final static short NI=258;
+	public final static short VAR=259;
+	public final static short MENORIGUAL=260;
+	public final static short CONST_INT=261;
+	public final static short CONST_FLOAT=262;
+	public final static short MAYORIGUAL=263;
+	public final static short IGUALIGUAL=264;
+	public final static short DISTINTO=265;
+	public final static short CADENA=266;
+	public final static short IF=267;
+	public final static short ELSE=268;
+	public final static short END_IF=269;
+	public final static short OUT=270;
+	public final static short THEN=271;
+	public final static short FUNC=272;
+	public final static short RETURN=273;
+	public final static short INTEGER=274;
+	public final static short FLOAT=275;
+	public final static short WHILE=276;
+	public final static short LOOP=277;
+	public final static short ID=278;
+	public final static short TRUE=279;
+	public final static short FALSE=280;
+	public final static short YYERRCODE=256;
 	private String lexema;
 	private int nro;
 	
@@ -32,6 +38,8 @@ public class Token {
 	public int getNro() {
 		if (lexema.equals("+"))
 			return 43;
+		if (lexema.equals("Fin"))
+			return 0;
 		if (lexema.equals("-"))
 			return 45;
 		if (lexema.equals(","))
@@ -94,6 +102,8 @@ public class Token {
 			return CONST_FLOAT;
 		if (lexema.equals("{"))
 			return 123;
+		if (lexema.equals("Error"))
+			return -1;
 		if (lexema.equals("}"))
 			return 125;
 		return ID;//SI NO ENTRO EN ALGUN OTRO IF LO UNICO QUE QUEDA ES QUE SEA IDENTIFICADOR

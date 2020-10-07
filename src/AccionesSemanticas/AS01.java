@@ -4,36 +4,36 @@ import AnalizadorLexico.AnalizadorLexico;
 
 public class AS01 extends AccionSemantica {
 	
-	/* Accion semantica numero uno
-	 * chequea la cantidad de caracteres que sea menor a 20, si es mayor tira un warning y trunquea el digito
-	 * tambien chequea si es una de las palabras reservadas, si no es palabra reservada chequea que todo 
-	 * sea en letras minusculas, si no, se fija en la tabla de simbolos por si es un identificador ya usado, 
-	 * si existe se guarda puntero a la tabla de simbolo, si no existe se agrega y se guarda el puntero. 
+	/* Accion semantica numero uno.
+	 * Chequea si es una palabra reservada si no,
+	 * chequea que la cantidad de caracteres sea menor a 20, si es mayor tira un warning y trunca el ID.
+	 * chequea que sea en letras minusculas, si no, tiramos warning y se tranforma en minuscula luego
+	 * se fija en la tabla de simbolos por si es un identificador ya usado, 
+	 * si no existe se agrega   
 	 * Y vuelve un digito para atras
 	*/
 	
 	public AS01() {
 		super();
 	}
-	//falta volver caracter a entrada
 	public void execute(AnalizadorLexico a_lexico,char c) {
-		//variable lexema
-		int i=0;
-		if (!a_lexico.isPalabraReservada(a_lexico.getLexema())) {
-			if (a_lexico.getLexema().length() < 20) {
-				//tirar warning
-				a_lexico.setLexema(a_lexico.getLexema().substring(0,19));
+		String lex = a_lexico.getLexema();
+		if (!a_lexico.isPalabraReservada(lex)) {
+			if (lex.length() > 20) {
+				lex = lex.substring(0,19);
 				System.out.println("Warning longitud del lexema sobrepasa los limites en linea "+a_lexico.getNroLinea());
 			}
-			boolean hasUppercase = !a_lexico.getLexema().equals(a_lexico.getLexema().toLowerCase());
+			boolean hasUppercase = !lex.equals(lex.toLowerCase());
 			if (hasUppercase) {
 				System.out.println("Warning identificador contiene letra mayuscula");
-				a_lexico.setLexema(a_lexico.getLexema().toLowerCase());
+				lex = (lex.toLowerCase());
+				
 			}
-			if (!a_lexico.isKey(a_lexico.getLexema()))
-				a_lexico.addSimbolo(a_lexico.getLexema(), 0);
+			a_lexico.setLexema(lex);
+			if (!a_lexico.isKey(lex))
+				a_lexico.addSimbolo(lex, 0);// 0 desconocido 
 		}
-		i = a_lexico.getIndice() -1;
+		int i = a_lexico.getIndice() -1;
 		a_lexico.setIndice(i);
 	}
 	

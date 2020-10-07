@@ -5,7 +5,6 @@ import AnalizadorLexico.AnalizadorLexico;
 public class AS02 extends AccionSemantica{
 	
 	/* Accion semantica numero 2
-	* Agrega caracter al codigo de la entrada a un string
 	* Inicializar String (se reserva la maxima longitud permitida para identificadores)
 	* Agrega letra a string
 	*/
@@ -15,10 +14,10 @@ public class AS02 extends AccionSemantica{
 	}
 	
 	public void execute(AnalizadorLexico a_lexico,char c) {
-		String lexema = a_lexico.getLexema();
-		lexema += c;
-		a_lexico.setLexema(lexema);
-	}
+			String lexema = "";
+			lexema += c;
+			a_lexico.setLexema(lexema);
+		}
 	
 	public String toString() {
 		return "AS02";

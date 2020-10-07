@@ -13,12 +13,12 @@ public class AS03 extends AccionSemantica {
 		super();
 	}
 	
-	public void execute(AnalizadorLexico a_lexico,char c) {
-		String lexema = a_lexico.getLexema();
-		lexema += c;
-		a_lexico.setLexema(lexema);
-	}
-
+	public void execute(AnalizadorLexico a_lexico,char c)  {
+			String lexema = a_lexico.getLexema();
+			lexema += c;
+			a_lexico.setLexema(lexema);
+		}
+	
 	@Override
 	public String toString() {
 		return "AS03";

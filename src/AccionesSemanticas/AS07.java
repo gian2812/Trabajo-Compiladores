@@ -6,7 +6,6 @@ public class AS07 extends AccionSemantica {
 	
 	/* Accion semantica numero 7
 	 * vuelve al caracter anterior
-	 * ejemplo: precio = precio + 1
 	 */
 
 	public AS07() {
