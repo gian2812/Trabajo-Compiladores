@@ -7,24 +7,17 @@ import java.io.InputStreamReader;
 
 /*-----Importaciones del paquete Analizador lexico-----*/
 import AnalizadorLexico.AnalizadorLexico;
-
 import AnalizadorLexico.PalabrasReservadas;
 import AnalizadorLexico.TablaSimbolos;
 
-/*-----Importaciones del paqute de Acciones semanticssas----*/
+/*-----Importaciones del paqute de Acciones semanticas----*/
 import AccionesSemanticas.AccionSemantica;
 import AccionesSemanticas.MatrizAcciones;
-import AnalizadorSintatico.*;
-public class Main {
 
-	// Funcion para inicializar la matriz de chars
-	/*public static void inicMatrizChar(char mat[][]) {
-		for (int f = 0; f < mat.length; f++)
-			for (int c = 0; c < mat[f].length; c++) {
-				mat[f][c] = 'F';
-				System.out.println(mat[f][c]);
-			}
-	}*/
+/*-----Importaciones del paqute de Analizador sintactico----*/
+import AnalizadorSintatico.*;
+
+public class Main {
 
 	public static void main(String[] args) throws IOException {
 		
@@ -37,9 +30,10 @@ public class Main {
 			 System.out.println("token leido "+tokenleido);
 		 }
 		 al.imprimirTS();*/
-		Parser p = new Parser("C:\\Users\\Gian\\Desktop\\Compiladores\\Pruebas SINT\\declaracion.txt");
-		p.run();
-			
+		/*Parser p = new Parser("C:\\Users\\Gian\\Desktop\\Compiladores\\Pruebas SINT\\declaracion.txt");
+		p.run();*/
+		String path = "C:\\Users\\ale-5\\git\\Trabajo-Compiladores\\Pruebas LEX\\CadenaBienDefinida.txt";
+		AnalizadorLexico al = new AnalizadorLexico(path);
 		}
 	}
 
