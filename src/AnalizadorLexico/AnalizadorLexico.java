@@ -8,7 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import AccionesSemanticas.MatrizAcciones;
-import AnalizadorSintatico.ParserVal;
+import AnalizadorSintactico.ParserVal;
 
 public class AnalizadorLexico {
 

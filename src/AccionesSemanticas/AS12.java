@@ -8,6 +8,7 @@ public class AS12 extends AccionSemantica{
 	 * informa que se cierra el comentario 
 	 * Se controla si cadenas y comentarios estan abiertos por si termina el programa sin cerrar alguno de los ya mencionados.
 	 */
+	
 	public AS12() {
 		super();
 		// TODO Auto-generated constructor stub

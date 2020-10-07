@@ -1,4 +1,4 @@
-package AnalizadorSintatico;
+package AnalizadorSintactico;
 
 //#############################################
 //## file: Parser.java

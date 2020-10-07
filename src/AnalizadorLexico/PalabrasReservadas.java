@@ -18,6 +18,9 @@ public class PalabrasReservadas {
 		listaPR.add("FLOAT");
 		listaPR.add("WHILE");
 		listaPR.add("LOOP");
+		listaPR.add("PROC");
+		listaPR.add("NI");
+		listaPR.add("VAR");
 	};
 	
 	public void addPR(String p) {

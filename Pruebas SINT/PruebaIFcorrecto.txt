@@ -1,0 +1,7 @@
+a=-5_i;
+d=.2f+1;
+IF (a<b)
+	OUT("ENTRO EN EL IF");
+ELSE
+	OUT("ENTRO EN EL ELSE");
+END_IF;

@@ -94,10 +94,10 @@ public class Token {
 			return LOOP;
 		if ((lexema.charAt(0) == '0') || (lexema.charAt(0) == '1') || (lexema.charAt(0) == '2') || (lexema.charAt(0) == '3') || (lexema.charAt(0) == '4') || (lexema.charAt(0) == '5') ||
 				(lexema.charAt(0) == '6') || (lexema.charAt(0) == '7') || (lexema.charAt(0) == '8') || (lexema.charAt(0) == '9'))
-			if ( lexema.charAt(lexema.length()-1)== 'i')
-				return CONST_INT;
-			else
+			if (lexema.contains("f")||lexema.contains("."))
 				return CONST_FLOAT;
+			else
+				return CONST_INT;
 		if (lexema.charAt(0) == '.')
 			return CONST_FLOAT;
 		if (lexema.equals("{"))
@@ -106,6 +106,12 @@ public class Token {
 			return -1;
 		if (lexema.equals("}"))
 			return 125;
+		if (lexema.equals("PROC"))
+			return PROC;
+		if (lexema.equals("NI"))
+			return NI;
+		if (lexema.equals("VAR"))
+			return VAR;
 		return ID;//SI NO ENTRO EN ALGUN OTRO IF LO UNICO QUE QUEDA ES QUE SEA IDENTIFICADOR
 		
 	}
@@ -113,7 +119,7 @@ public class Token {
 
 	@Override
 	public String toString() {
-		return "Token [lexema=" + lexema + ", nro=" + nro + "]";
+		return "Token [lexema= '" + lexema + "' , nro= " + nro + "]";
 	}
 
 	public String getLexema() {

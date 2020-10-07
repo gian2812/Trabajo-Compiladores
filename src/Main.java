@@ -1,5 +1,6 @@
 import java.io.FileInputStream;
 import AnalizadorLexico.Token;
+import AnalizadorSintactico.*;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,9 +14,6 @@ import AnalizadorLexico.TablaSimbolos;
 /*-----Importaciones del paqute de Acciones semanticas----*/
 import AccionesSemanticas.AccionSemantica;
 import AccionesSemanticas.MatrizAcciones;
-
-/*-----Importaciones del paqute de Analizador sintactico----*/
-import AnalizadorSintatico.*;
 
 public class Main {
 
@@ -32,8 +30,8 @@ public class Main {
 		 al.imprimirTS();*/
 		/*Parser p = new Parser("C:\\Users\\Gian\\Desktop\\Compiladores\\Pruebas SINT\\declaracion.txt");
 		p.run();*/
-		String path = "C:\\Users\\ale-5\\git\\Trabajo-Compiladores\\Pruebas LEX\\CadenaBienDefinida.txt";
-		AnalizadorLexico al = new AnalizadorLexico(path);
+		Parser prueba = new Parser("C:\\Users\\ale_5\\git\\Trabajo-Compiladores\\Pruebas SINT\\PruebaPROCcorrecto.txt");
+		prueba.run();
 		}
 	}
 

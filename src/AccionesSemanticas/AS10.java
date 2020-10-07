@@ -7,6 +7,7 @@ public class AS10 extends AccionSemantica{
 	/* Accion semantica numero 10
 	 * Agregar el caracter al string y informa se abrio una cadena
 	 */
+	
 	public AS10() {
 		super();
 		// TODO Auto-generated constructor stub

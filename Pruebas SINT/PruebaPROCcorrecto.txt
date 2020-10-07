@@ -1,0 +1,2 @@
+PROC saludar (INTEGER a) NI=1_i 
+	{OUT("ANDA TODO CORRECTO");};

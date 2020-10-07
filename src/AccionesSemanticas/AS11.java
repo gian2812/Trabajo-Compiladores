@@ -7,6 +7,7 @@ public class AS11 extends AccionSemantica{
 	/* Accion semantica numero 11
 	 * informa que se abre comentario 
 	 */
+	
 	public AS11() {
 		super();
 		// TODO Auto-generated constructor stub
