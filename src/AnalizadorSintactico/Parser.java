@@ -513,7 +513,7 @@ public void imprimirTS() {
 	al.imprimirTS();
 }
 
-private  int yylex(){
+private int yylex(){
 	Token aux = al.yylex(valor);
 	while (aux.getNro() == -1) {
 		System.out.println("Error, se leyo un token erroneo en la linea "+al.getNroLinea());

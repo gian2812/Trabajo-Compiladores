@@ -22,12 +22,12 @@ public class TablaSimbolos {
 	}
 	
 	/* Obtener un simbolo */
-	public Integer getSimbolo(Integer id) {
+	public Integer getSimbolo(String id) {
 		return this.simbolos.get(id);
 	}
 
 	/* Elimina un simbolo */
-	public void removeSimbolo(Integer id) {
+	public void removerSimbolo(String id) {
 		this.simbolos.remove(id);
 	}
 	
